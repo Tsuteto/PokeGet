@@ -1,0 +1,482 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en-US">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+	<title>Description - PokeCatchem</title>
+	<link rel="stylesheet" href="help_en.css" type="text/css">
+</head>
+<body>
+<a name="top"></a>
+<h1>PokeCatchem EX-4G Description</h1>
+<center><a href="pokeGet.cgi?lang=en">Back to PokeCatchem EX-4G</a></center>
+<div class="space"></div>
+<h2>Contents</h2>
+<div class="box contents">
+<p>This is a document written by a mere Japanese. There is probably a part which is kinda hard to read, but... Have fun! ^_^;</p>
+<h3><a href="#faq">FAQ</a></h3>
+<h4><a href="#qa_general">Overall</a></h4>
+<h4><a href="#qa_graph">Around graph</a></h4>
+<h4><a href="#qa_dp">Gen. IV: Diamond, Pearl, Platinum, HeartGold, SoulSilver</a></h4>
+<h4><a href="#qa_rs">Gen. III: Ruby, Sapphire, FireRed, LeafGreen</a></h4>
+<h4><a href="#qa_gs">Gen. II: Gold, Silver, Crystal</a></h4>
+<h4><a href="#qa_rgb">Gen. I: Red, Green, Blue, Yellow</a></h4>
+
+<h3><a href="#words">Term Explanation</a></h3>
+<h4><a href="#w_general">Overall</a></h4>
+<h4><a href="#w_dp">Gen. IV: Diamond, Pearl, Platinum, HeartGold, SoulSilver</a></h4>
+<h4><a href="#w_rs">Gen. III: Ruby, Sapphire, FireRed, LeafGreen</a></h4>
+<h4><a href="#w_gs">Gen. II: Gold, Silver, Crystal</a></h4>
+<h4><a href="#w_rgb">Gen. I: Red, Green, Blue, Yellow</a></h4>
+
+<h3><a href="#app">Appendix</a></h3>
+<h4><a href="#ap_pf">Proof that the catch probability has no relation to the quantity of Pok&eacute;mon's max HP</a></h4>
+
+<h3><a href="#update">Update History</a></h3>
+<p>Detailedly states since version 5.3.0.</p>
+</div>
+
+<a name="faq"></a>
+<h2>FAQ</h2>
+<div class="box">
+
+<a name="qa_general"></a>
+<h3>Overall</h3>
+	<h4>Is the calculated result really right?</h4>
+	<p>We've probably been able to fit to the internal process because of Nen-nen, who provided data to me. (Thank him!) However, since we calculate with HP percentage, there're cases where we can't put a strict result out.</p>
+	<h4>I've ever heard catch probability can't be calculated without the number of max HP and the number of remaining HP...</h4>
+	<p>As a matter of fact, we discovered both the max HP and the remaining HP aren't needed for the calculation. So I've made this program using it this time.</p>
+	<p>To know details, please see the Term Explanation.</p>
+	<h4>Do you properly support the balls which works on a condition, such as Heavy Ball, Net Ball, and Love Ball?</h4>
+	<p>Yes. We support those as much as possible, and calculate using actual Pok&eacute;mon's data (weight, type, and so on) earnestly.</p>
+	<h4>That's an impossible combination!</h4>
+	<p>Uh, that's right. If you hook a Venusaur, goldfish game's master must get a pallid face. If there're Groudons in various parts of the world, they must cause much more than natural disaster. If there's Mewtwo in Safari Zone, everybody runs away.</p>
+	<p>But, those are good things which gives you and us a dream, aren't those? Now you've been in agreement. It's specifications, not a bug.</p>
+	<p>Such as we are, we're making effort to deal with those as much as possible, though.</p>
+	<h4>I say, I hit an error after I directly entered a Pok&eacute;mon name.</h4>
+	<p>It won't work if "That Pok&eacute;mon won't be found" has come out below. The right name may come out by deleting letters.</p>
+	<h4>How do you calculate it?</h4>
+	<p>It's described by the section "ボール(ball)" of each the １号館(1st building) and the ２号館(2nd building) on <a href="http://www.pic.bz/">ポケットモンスター情報センター</a>(Pokemon Information Center)</p>
+	<p>In the case of Diamond/Pearl, also see the article <a href="http://wiki.xn--rckteqa2e.com/wiki/捕獲処理">捕獲処理</a> (catch process) on <a href="http://wiki.xn--rckteqa2e.com/">ポケモンWiki</a>(Pok&eacute;mon Wiki).</p>
+	<p>The above are Japanese pages. In English, see the article <a href="http://bulbapedia.bulbagarden.net/wiki/Catch_Rate">Catch rate</a> on <a href="http://bulbapedia.bulbagarden.net/wiki/">Burubapedia</a></p>
+	<h4>What's the "EX-4G"...? lol</h4>
+	<p>It's a short for "EXpert enhanced with the 4th Generation and Graph"!</p>
+	<p>The 4th generation means Diamond, Pearl, and so on, and the reason for expert is that we're supporting all versions. We've also contained the meaning for graph into 'G'. In this part of the title we intentionally have a plan to follow the (Japanese) teens' liking.</p>
+	<h4>Isn't this kinda wrong? Or, I'd like to ask to you!</h4>
+	<p>When you are in trouble, have some questions, or hope to make a request, please tell us with <a href="mailto:midis_cube@yahoo.co.jp">mail</a></p>
+	<p class="goTop"><a href="#top">Back to the menu</a></p>
+
+<a name="qa_graph"></a>
+<h3>Around graph</h3>
+	<h4>It would be easy to look if you could display the catch probability at the points of the graph...</h4>
+	<p>We've tried to do that at first, but we found that we can't put any characters on the graph due to a restriction of the server. That's why it keeps that.</p>
+	<h4>I can't draw a graph with the f**king Safari Ball!</h4>
+	<p>Calm down a little. As you know, you can't decrease a Pok&eacute;mon's HP in that Safari Zone which is not allowed battles. The HP is always 100%, so we don't need to draw a graph.</p>
+	<p class="goTop"><a href="#top">Back to the menu</a></p>
+
+<a name="qa_dp"></a>
+<h3>Gen. IV: Diamond, Pearl, Platinum, HeartGold, SoulSilver</h3>
+	<h4>Don't you try this?</h4>
+	<p>I've finally got done! Yay.</p>
+	<p>Good job, Pok&eacute;mon Wiki editors! I found it already has been clear in 2007. I didn't notice it though I'd seen many times.</p>
+	<h4>The result isn't much changed from Ruby/Sapphire, is it?</h4>
+	<p>Because the formula hasn't been changed. Sorry!</p>
+	<p>But, also this version is independent. Because balls have been increased, and casually the wild in a condition of sleep or ice has become easy to catch.</p>
+	<h4>Balls of Apricorn sort were not found, but what was going on?</h4>
+	<p>Ah-oh...(;´д｀) In fact I didn't know these because I've never played HG/SS. Feel sorry. For I couldn't possibly take time to play.</p>
+	<h4>And yet, Speed Ball can't be used, huh?</h4>
+	<p>Because the condition that the effect of Speed Ball works isn't clear yet. It doesn't mean I'm absent.<br>
+	They say that is relating to the base stats in Speed of the wild Pok&eacute;mon.</p>
+	<h4>Why doesn't the effect of Lure Ball appear?</h4>
+	<p>However you put a check to "Hooked by a rod," the effect doesn't appear if the Pok&eacute;mon has not the water type.</p>
+	<h4>What's the "0x" so-and-so?</h4>
+	<p>It expresses the following value of it is a hexadecimal number. For instance, "0xA4" means "A4 as a hexadecimal number."<br>
+	To express an number using 10 characters from 0 to 9 is called the decimal notation, and to express a number using 16 characters from 0 to 9 and from A to F is called the hexadecimal notation. Anyway, it's okay for now even if you have no idea.</p>
+	<p class="goTop"><a href="#top">Back to the menu</a></p>
+
+<a name="qa_rs"></a>
+<h3>Gen. III: Ruby, Sapphire, FireRed, LeafGreen</h3>
+	<h4>I can't get the effect of Dive Ball, can I?</h4>
+	<p>However you put a check to "In the bottom of the sea," the effect don't appear if the Pok&eacute;mon has not the water type.</p>
+	<h4>What's the "0x" so-and-so?</h4>
+	<p>It expresses the following value of it is a hexadecimal number. For instance, "0xA4" means "A4 as a hexadecimal number."<br>
+	To express an number using 10 characters from 0 to 9 is called the decimal notation, and to express a number using 16 characters from 0 to 9 and from A to F is called the hexadecimal notation. Anyway, it's okay for now even if you have no idea.</p>
+	<a name="rs_truth1"></a>
+	<h4>I got a feeling that the result which is calculated following the formula of "Pokemon Information Center" and the result which is calculated here are different. (by black_k_123)</h4>
+	<p>Portable game machines can cut calculation short. To be concrete, they always calculate omitting fractions. That's the world of 5 / 2 = 2. Also the program of catch decision in the internal of Pok&eacute;mon calculates following it.<br>
+	The formulas written in "Pokemon Information Center" intentionally omit the expression in written because of considering that to be natural. If you calculate caring it, you'll get the same result as our calculator. However, there's a point that you might overlook in a timing of omitting fractions. See the next article too.</p>
+	<a name="rs_truth2"></a>
+	<h4>I've seen the different result that was calculated with a other program of calculating a catch probability.</h4>
+	<p>They are properly omitting fractions, but I've ever seen that some fails to do it at the below place.</p>
+	<p>B = 000FFFF0 / ( √( √( 00FF0000/A ) ) )<br>
+	<font size="-1" color="gray">* From Pokemon Information Center</font></p>
+	<p>In the part of taking a root twice, some of them omitted fractions after doing it twice at once. This is an error. Nen-nen said because the routine for calculating a root returns an integer, they should omit fractions for every taking a root. Therefore, each of the answers comes different in the end.</p>
+	<p class="goTop"><a href="#top">Back to the menu</a></p>
+
+<a name="qa_gs"></a>
+<h3>Gen. II: Gold, Silver, Crystal</h3>
+	<h4>The Lure Ball effect doesn't come out. Why? </h4>
+	<p>However you put a check to "Hooked by a rod," the effect doesn't appear if the Pok&eacute;mon has not the water type.</p>
+	<h4>The Love Ball's effect can't be seen.</h4>
+	<p>Love Ball doesn't take effect to both an genderless Pok&eacute;mon and a single-gender Pok&eacute;mon.</p>
+	<p class="goTop"><a href="#top">Back to the menu</a></p>
+
+<a name="qa_rgb"></a>
+<h3>Gen. I: Red, Green, Yellow</h3>
+	<h4>Hey, great Ball occasionally take a higher catch probability than Ultra Ball...?</h4>
+	<p>Well... We wonder why. Seems that phenomenon is brought especially in cases where the remaining HP is more than 50% and there's no status ailment.</p>
+	<h4>There're few types of Pok&eacute; Ball.</h4>
+	<p>I think so, too. It was really simple in former times, you know. I have been absorbed in my sense of nostalgia while making this, yeah...</p>
+	<h4>Safari Ball isn't too.</h4>
+	<p>OMG! Don't say that! XD</p>
+	<p class="goTop"><a href="#top">Back to the menu</a></p>
+
+<h3>Something extra</h3>
+	<h4>This FAQ might be...</h4>
+	<p>A story written by ourselves. ^_^;; But it hasn't been all. Please ask us your questions.</p>
+	<h4>Hidden features on the Pok&eacute;mon input field!</h4>
+	<p>You input "_" in the head, then it searches Pok&eacute;mon containing the input in the tail.<br>
+	<font color="gray">For example, "_ine": Arcanine, Mantine, and so on.</font></p>
+	<p>You input "-" after a Pok&eacute;mon number, then it displays 10 spacies from the number.<br>
+	<font color="gray">For exmaple, "480-": from 480.Uxie to 489.Phione</font></p>
+	<p>Is that it? Sorta useless.</p>
+	<p>By the way, we named this one, which searches a Pok&eacute;mon name without asking, "TyPokeHelper," the Pok&eacute;mon realtime searching feature!</p>
+	<p>It's consisted of type, poke, and helper. Thank you... however you would think who cares.</p>
+	<p class="goTop"><a href="#top">Back to the menu</a></p>
+</div>
+
+<div class="space"></div>
+
+<a name="words"></a>
+<h2>Term Explanation</h2>
+<div class="box">
+
+<a name="w_general"></a>
+<h3>Overall</h3>
+<dl>
+	<dt>Remaining HP % (Rem. HP %)</dt>
+	<dd><p>A ratio of the remaining HP quantity out of the max HP. A percentage, which is the remaining HP devided by the max HP.</p>
+	<p>To draw an exact line, here we call the HP, which is expressed by a number as usual, "HP quantity" or "HP qty," and call the HP, which is expressed by a ratio, "HP percentage" or "HP %."</p>
+	<p>Though the max HP qty is contained in the formula for finding the catch probability, it doesn't depend on its size actually. Therefore, the catch probability can be calculated if we get this "remaining HP %." This is true through the entire series, and we've proved each not to need those. See the term explanation of each version.</p>
+	<p>However, we don't use the formula combined on demonstration in this program, to fit the internal process of the game.</p></dd>
+	<dt>Catch rate</dt>
+	<dd><p>The degree of easiness to catch. The higher the value, the easier to catch. It's defined in each species.</p></dd>
+	<dt>Cumulative catch probability (Cumulative catch prob.)</dt>
+	<dd><p>Against the catch probability, which means the probability of catch on throwing a ball once, it means the probability of catch from the result on thrown a ball many times. You can get it from:</p>
+	<p>p<sub>c</sub> = 1 - p<sup>b</sup></p>
+	<p>which p<sub>c</sub> is the cumulative catch probability, p is the catch probability, and b is the number of balls used.</p>
+	<p>This is an approach that the more the throws the better the probability of catch.</p>
+</dl>
+	<p class="goTop"><a href="#top">Back to the menu</a></p>
+
+<a name="w_dp"></a>
+<h3>Gen. IV: Diamond, Pearl, Platinum, HeartGold, SoulSilver</h3>
+<dl>
+	<dt>Catch rate bonus (C.R. bonus)</dt>
+	<dd><p>The catch rate gains the performance of the ball, and is substituted into the formula. It's the expression in that time, which is</p>
+	<p>× bonus<sub>multiplier</sub> + bonus<sub>appended</sub> (only for Heavy Ball)</p></dd>
+	<dt>♂♀ ratio</dt>
+	<dd><p>A ratio of gender on the one species existing in the Pok&eacute;mon world.</p></dd>
+	<p>For instance, "2:1" expresses 2 males and 1 female of 3.</p>
+	<p>On a genderless species, a blank is displayed.</p>
+</dl>
+<p><em>Other articles are the same to Ruby/Sapphire. See there.</em></p>
+<p class="goTop"><a href="#top">Back to the menu</a></p>
+
+<a name="w_rs"></a>
+<h3>Gen. III: Ruby, Sapphire, FireRed, LeafGreen</h3>
+<dl>
+	<dt>Catch index</dt>
+	<dd><p>Only in Safari Zone. It's calculated based on the catch rate and the numbers of thrown rocks/muds and baits, and is treated instead of a catch rate.</p></dd>
+	<dt>Catch coefficient (Catch coef.)</dt>
+	<dd><p>This one value which is given from inputted various data directly affects the catch probability.</p>
+	<p>However, if that is more than 255, it assures to catch.</p></dd>
+	<dt>Catch rate bonus (C.R. bonus)</dt>
+	<dd><p>The catch rate gains the performance of the ball, and is substituted into the formula. It's the expression in that time, which is</p>
+	<p>× bonus<sub>multiplier</sub></p></dd>
+	<dt>Decision threshold (Decision thrsh.)</dt>
+	<dd><p>When a generated random number (between 0 to 0xFFFF) is less than this value, the ball is wiggled once. If it keeps 4 times, the capture will succeed.</p></dd>
+</dl>
+	<p class="goTop"><a href="#top">Back to the menu</a></p>
+
+<a name="w_gs"></a>
+<h3>Gen. II: Gold, Silver, Crystal</h3>
+<dl>
+	<dt>Catch rate bonus (C.R. bonus)</dt>
+	<dd><p>The catch rate gains the performance of the ball, and is substituted into the formula. It's the expression in that time, which is</p>
+	<p>× bonus<sub>multiplier</sub> + bonus<sub>appended</sub> (only for Heavy Ball)</p></dd>
+	<dt>♂♀ ratio</dt>
+	<dd><p>A ratio of gender on the one species existing in the Pok&eacute;mon world.</p>
+	<p>For instance, "2:1" expresses 2 males and 1 female of 3.</p>
+	<p>On a genderless species, a blank is displayed.</p></dd>
+</dl>
+	<p class="goTop"><a href="#top">Back to the menu</a></p>
+
+<a name="w_rgb"></a>
+<h3>Gen I: Red, Green, Blue, Yellow</h3>
+<dl>
+	<dt>Actual remaining HP %</dt>
+	<dd><p>A remaining HP % actually substituted into the formula of the catch probability. There's a low limit value varies from ball to ball, and the remaining HP percentage less than it is substituted by it.</p>
+	<p>It means, you can't get any effects however you reduce the HP more than the low limit value.</p>
+	<p>The low limit value is given from the max HP qty devided by the low limit constant which is the following:</p>
+	<blockquote>Pok&eacute; Ball = 3<br>
+	Great Ball = 2<br>
+	Ultra Ball = 3</blockquote>
+	<p>Exceptionally, the max HP % loses all relations when the wild is a specific Pokmon and has no ailment. In this case, a blank is displayed.</p></dd>
+	<dt>Catch rate bonus (C.R. bonus)</dt>
+	<dd><p>It's simply a ball performance in this time, and is the expression:</p>
+	<p>÷ bonus<sub>index</sub></p></dd>
+	<dt>Decision threshold (Decision thrsh.)</dt>
+	<dd><p>Used on handing down the final decision of the capture. If the generated random value (between 0 to 255) is less than it, then the capture will succeed.</p>
+	<p>This value comes to directly affect to the catch probability but there's a case that decision of catch is finished before, so these are not necessarily in proportion.</p></dd>
+</dl>
+	<p class="goTop"><a href="#top">Back to the menu</a></p>
+</div>
+
+<div class="space"></div>
+
+<a name="app"></a>
+<h2>Appendix</h2>
+<div class="box">
+
+<a name="ap_pf"></a>
+<h3>Proof that the catch probability has no relation to the quantity of Pok&eacute;mon's max HP</h3>
+<p>To prove this we rearrange formulas to remove the max HP qty from it.</p>
+<dl>
+	<dt>Diamond, Pearl, Platinum, HeartGold, SoulSilver</dt>
+	<dd class="math">
+	<p>The formula is completely the same to Ruby/Sapphire. See the next article. &gt;_&lt;</p>
+	</dd>
+	<dt>Ruby, Sapphire, FireRed, LeafGreen</dt>
+	<dd class="math">
+	<p>The formula to find the catch index G<sub>c</sub> is:</p>
+	<p>G<sub>c</sub> = (3H - 2RH) × e ÷ 3H × s</p>
+	<p>where 
+	H is the max HP qty, 
+	n is the remaining HP qty (1 ≦ n ≦ H), 
+	R is the remaining HP percentage (0 &lt; R ≦ 1), 
+	e is the catch rate × the ball bonus, and 
+	s is the status ailment corr.</p>
+	<p><table border="0" cellspacing="0" cellpadding="0"><tr>
+	<td rowspan="2">=</td>
+	<td>3eH - 2eRH</td>
+	<td rowspan="2">s</td>
+	</tr>
+	<tr>
+	<td class="bunbo">3H</td>
+	</tr>
+	</table>
+	<table border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td rowspan="2">= <font size="+1">(</font> e -</td>
+		<td>2eR</td>
+		<td rowspan="2"><font size="+1">)</font> s</td>
+	</tr>
+	<tr>
+		<td align="center" class="bunbo">3</td>
+	</tr>
+	</table></p>
+	<p>Since the H has been removed, the catch index is not related to the max HP qty. The H doesn't appear any longer after this. Hence, the same is equally true of the catch probability. That's all.</p>
+	</dd>
+	
+	<div class="space"></div>
+	<dt>Gold, Silver, Crystal</dt>
+	<dd class="math">
+	<p>The fomula to find the catch probability G<sub>p</sub> is:</p>
+	<p>G<sub>p</sub> = {(1 - n ÷ H ÷ 2) × g × b + s + 1} ÷ 256</p>
+	<p>where 
+	H is the max HP qty, 
+	n is the remaining HP qty (1 ≦ n ≦ H), 
+	R is the remaining HP % (0 &lt; R ≦ 1), 
+	g is the catch rate, 
+	b is the ball bonus, and 
+	s is the status ailment corr.</p>
+	<p>
+	<table border="0" cellspacing="0" cellpadding="0">
+	<tr><td>= {(1 - n ÷ 2H) gb + s + 1} ÷ 256</td></tr>
+	</table>
+	<table border="0" cellspacing="0" cellpadding="0">
+		<tr><td></td>
+				<td rowspan="2">( 1 - </td>
+				<td>n</td>
+				<td rowspan="2">) gb + s + 1</td>
+		</tr>
+		<tr>
+				<td rowspan="2">=</td>
+				<td class="bunbo">2H</td>
+		</tr>
+		<tr>
+				<td class="bunbo" colspan="3">256</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="0" cellpadding="0">
+		<tr><td></td>
+				<td rowspan="2">( 1 - </td>
+				<td>n</td>
+				<td rowspan="2">&#x2219;</td>
+				<td>1</td>
+				<td rowspan="2">) gb + s + 1</td>
+		</tr>
+		<tr>
+				<td rowspan="2">=</td>
+				<td class="bunbo">H</td>
+				<td class="bunbo">2</td>
+		</tr>
+		<tr>
+				<td class="bunbo" colspan="5">256</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="0" cellpadding="0"><tr><td rowspan="2">Here, since </td><td>n</td><td rowspan="2">= R, substitute it.</td></tr>
+			<tr><td class="bunbo">H</td></tr></table>
+	<table border="0" cellspacing="0" cellpadding="0">
+		<tr><td></td>
+				<td rowspan="2"><font size="+1">(</font> 1 - </td>
+				<td rowspan="2">R</td>
+				<td rowspan="2">&#x2219;</td>
+				<td>1</td>
+				<td rowspan="2"><font size="+1">)</font> gb + s + 1</td>
+				
+				<td></td>
+				<td rowspan="2"><font size="+1">(</font> 1 - </td>
+				<td>R</td>
+				<td rowspan="2"><font size="+1">)</font> gb + s + 1</td>
+		</tr>
+		<tr>
+				<td rowspan="2">=</td>
+				<td class="bunbo">2</td>
+				
+				<td rowspan="2">=</td>
+				<td class="bunbo">2</td>
+		</tr>
+		<tr>
+				<td class="bunbo" colspan="5">256</td>
+				
+				<td class="bunbo" colspan="5">256</td>
+		</tr>
+	</table></p>
+	<p>That's all. Since the H has been removed, the catch probability is not related to the max HP qty.</p>
+	</dd>
+	
+	<div class="space"></div>
+	<dt>Red, Green, Yellow</dt>
+	<dd class="math">
+	<p>The fomula to find the catch probability G<sub>p</sub> is:</p>
+	<p>G<sub>p</sub> = (g + 1) × H ÷ (l × n) ÷ b</p>
+	<p>where
+	l is the low limit value, 
+	H is the max HP qty, 
+	n is the remaining HP qty (H ÷ l ≦ n ≦ H), 
+	R is the remaining HP % R, 
+	g is the catch rate, and 
+	b is the ball bonus. 
+	However, the status ailment is none.</p>
+	<p>
+	<table border="0" cellspacing="0" cellpadding="0">
+	<tr><td>= (g + 1)H ÷ ln ÷ b</td></tr>
+	</table>
+	<table border="0" cellspacing="0" cellpadding="0">
+		<tr><td></td>
+				<td rowspan="2"></td>
+				<td>gH + H</td>
+				<td rowspan="2"></td>
+				<td></td>
+				<td rowspan="2"></td>
+				<td>gH</td>
+				<td rowspan="2">+</td>
+				<td>H</td>
+				<td rowspan="2"></td>
+				<td></td>
+				<td class="kakko" rowspan="2">&nbsp;<font size="+1">(</font></td>
+				<td rowspan="2">g</td>
+				<td>H</td>
+				<td rowspan="2">+</td>
+				<td>H</td>
+				<td class="kakko" rowspan="2"><font size="+1">)</font></td>
+				<td rowspan="2">÷ l</td>
+			</tr>
+			<tr>
+				<td rowspan="2">=</td>
+				<td class="bunbo">ln</td>
+				<td rowspan="2">=</td>
+				<td class="bunbo">ln</td>
+				<td class="bunbo">ln</td>
+				<td rowspan="2">=</td>
+				<td class="bunbo">n</td>
+				<td class="bunbo">n</td>
+			</tr>
+			<tr>
+				<td class="bunbo" colspan="3">b</td>
+				<td class="bunbo" colspan="5">b</td>
+				<td class="bunbo" colspan="7">b</td>
+			</tr>
+	</table>
+	<table border="0" cellspacing="0" cellpadding="0">
+		<tr><td rowspan="2">Here, since</td><td>n</td><td rowspan="2">= R,</td></tr>
+		<tr><td class="bunbo">H</td></tr></table>
+	<table border="0" cellspacing="0" cellpadding="0">
+		<tr><td>H</td><td rowspan="2">= 1 ÷ R =</td><td>1</td></tr>
+		<tr><td class="bunbo">n</td><td class="bunbo">R</td></tr>
+	</table>
+	<table border="0" cellspacing="0" cellpadding="0">
+	<tr><td>and substitute it.</td></tr>
+	</table>
+	<table border="0" cellspacing="0" cellpadding="0">
+		<tr><td></td>
+		<td class="kakko" rowspan="2">&nbsp;<font size="+1">(</font></td>
+				<td rowspan="2">g</td>
+				<td>1</td><td rowspan="2">+</td><td>1</td>
+				<td class="kakko" rowspan="2"><font size="+1">)</font></td>
+				<td rowspan="2">÷ l</td>
+				<td></td>
+				<td rowspan="2"></td>
+				<td>g</td><td rowspan="2">+</td><td>1</td>
+				<td rowspan="2"></td>
+				<td></td>
+				<td rowspan="2"></td>
+				<td>g + 1</td>
+				<td rowspan="2"></td>
+				<td></td>
+				<td></td>
+			</tr>
+		<tr>
+				<td rowspan="2">=</td>
+				<td class="bunbo">R</td>
+				<td class="bunbo">R</td>
+				<td rowspan="2">=</td>
+				<td class="bunbo">R</td>
+				<td class="bunbo">R</td>
+				<td rowspan="2">=</td>
+				<td class="bunbo">R</td>
+				<td rowspan="2">=</td>
+				<td>g + 1</td>
+			</tr>
+		<tr>
+				<td colspan="7" class="bunbo">b</td>
+				<td class="bunbo" colspan="5">lb</td>
+				<td class="bunbo" colspan="3">lb</td>
+				<td class="bunbo">Rlb</td>
+			</tr>
+	</table></p>
+	<p>That's all. Since the H has been removed, the catch probability is not related to the max HP qty.</p>
+	</dd>
+</dl>
+	<p class="goTop"><a href="#top">Back to the menu</a></p>
+</div>
+
+<div class="space"></div>
+<a name="update"></a>
+<h2>Update History</h2>
+<div class="box update">
+<dl>
+	<dt>Ver. 5.3.0 released, Feb/23/2010</dt>
+	<dd><p>English is available! As result I've learned English a year.<br>
+	We corrected the wrong way of counting elapsed turns.</p></dd>
+	<dt>(Omitted... See the Japanese version.)</dt>
+	<dt>Ver. 1.1.0 released, Mar/16/2004</dt>
+	<dt>Ver. 1.0.0 unreleased</dt>
+</dl>
+	<p class="goTop"><a href="#top">Back to the menu</a></p>
+</div>
+<div class="space"></div>
+<center><a href="pokeGet.cgi?lang=en">Back to PokeCatchem</a></center>
+</body></html>

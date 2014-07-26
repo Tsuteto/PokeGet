@@ -1,0 +1,17 @@
+body {
+	font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+table.head td.title {
+	width: 50%;
+}
+
+/* Detailed result */
+table.res {
+	width: 260px;
+	font-family: "Verdana";
+}
+
+table.res td.item3 {
+	font-size: 0.8em;
+}

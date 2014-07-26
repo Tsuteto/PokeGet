@@ -1,0 +1,358 @@
+body {
+	background: url("../../frames/simple_bg.gif");
+	background-color: white;
+	margin-top: 0;
+	font-family: "メイリオ";
+}
+form {
+	margin: 0;
+}
+
+h1 {
+	margin-top: 1em;
+	padding-top: 0;
+	margin-bottom: 1.0em;
+	border-bottom: 1px gray solid;
+	font-size: 1.2em;
+}
+
+/* ヘッダ */
+table.headFrame {
+	margin-top: 1em;
+	padding-top: 0;
+	margin-bottom: 1.0em;
+	border-bottom: 1px gray solid;
+	width: 100%;
+}
+table.headFrame td {
+	vertical-align: bottom;
+}
+table.headFrame table td {
+	vertical-align: bottom;
+}
+table.head_left {
+	margin-left: 0 auto 0 0;
+}
+table.head_left td {
+}
+table.head_right {
+	margin: 0 0 0 auto;
+}
+table.head_left td.title {
+	font-size: 1.2em;
+	padding-right: 50px;
+}
+table.head_left td.qr {
+	padding-right: 5px;
+}
+table.head_left td.keitaiMsg {
+	padding-right: 20px;
+	font-size: 0.8em;
+}
+table.head_left td.lang {
+	font-size: 0.8em;
+}
+/* ボディ */
+caption {
+	text-align: left;
+}
+table.frame {
+	margin-top: 0.5em;
+	width: 100%;
+}
+table.frame td.formFrame {
+	width: 420px;
+}
+table.sep th {
+	text-align: left;
+	padding: 2px 5px 2px;
+	border-bottom: 1px solid #a0a0a0;
+	background-color: #f0f0f0;
+}
+table.frame th.ver {
+	padding: 2px 10px;
+	text-align: left;
+}
+td.versel {
+	line-height: 1.2em;
+}
+table.frame td {
+	padding: 2px 10px;
+	vertical-align: top;
+}
+.exChk {
+	border-top: 1px dashed #a0a0a0;
+}
+table.inputs {
+	margin: 0;
+	border-collapse: collapse;
+}
+
+table.inputs td {
+	padding-bottom: 5px;
+}
+table.sep {
+	border: 1px solid #a0a0a0;
+	background-color: white;
+	width: 400px;
+	border-collapse: collapse;
+}
+table.sep td {
+	padding: 4px;
+	line-height: 1.4em;
+}
+table.balls {
+	border-collapse: collapse;
+	border: 0;
+}
+table.balls td {
+	padding: 0;
+	vertical-align: middle;
+}
+table.twoCols {
+	width: 100%;
+}
+table.twoCols td {
+	width: 50%;
+}	
+table.condition {
+	width: 100%;
+	margin: 3px;
+	padding: 0;
+	border-collapse: collapse;
+}
+table.condition td {
+	padding: 0;
+}
+table.condition td.item2 {
+	text-align: right;
+	width: 20%;
+	font-size: 0.9em;
+	vertical-align: middle;
+	padding-right: 5px;
+}
+td.topLine {
+	border-top: 1px dashed #a0a0a0;
+}
+iframe#resultFrame {
+	width: 100%;
+	height: 500px;
+	
+}
+.note {
+	font-size: 0.8em;
+	color: #906060;
+	line-height: 1.2em;
+}
+.notebox {
+	display: inline-block;
+	font-size: 0.8em;
+	color: #906060;
+	line-height: 1.2em;
+	vertical-align: middle;
+}
+.etcBalls {
+	display: inline-block;
+	font-size: 0.7em;
+	vertical-align: middle;
+	width: 200px;
+	line-height: 1.2em;
+}
+#typokeDesc {
+	vertical-align: bottom;
+}
+input {
+	font-size: 1.0em;
+}
+input.ch {
+	font-size: 0.8em;
+	margin-top: 0.5em;
+}
+input.num {
+	ime-mode: disabled;
+}
+select.pSel {
+	margin: 0.3em 0 0.5em;
+}
+input.cDeg {
+	font-size: 1.2em;
+}
+input.calc {
+	width: 100px;
+}
+.bottom {
+	padding-left: 50px;
+	padding-right: 50px;
+}
+table.st {
+	border: 1px gray solid;
+	padding: 5px;
+	background-color: #e0e0e0;
+	width: 250px;
+}
+table.st td {
+	width: 50%;
+	text-align: center;
+	vertical-align: middle;
+}
+
+table.footer {
+	clear: both;
+}
+
+td.etc {
+	font-size: 0.9em;
+}
+
+/* 計算結果詳細 */
+table.res {
+	line-height: 1.2em;
+	background-color: white;
+	border: 1px solid gray;
+	width: 230px;
+	font-family: "Verdana";
+}
+table.res td {
+	padding: 0px 2px;
+	margin: 0px;
+}
+
+table.res td.getPer {
+	padding: 10px 0;
+	line-height: 1em;
+	background-color: #e0e0ff;
+	text-align: center;
+	font-family: Helvetica, Arial;
+	font-weight: bold;
+}
+
+.res .cmt {
+	font-size: 0.9em;
+	text-align: center;
+	border-bottom: 1px gray solid
+}
+table.res table.cumPer {
+	border: 0;
+	padding: 0;
+	font-size: 0.8em;
+}
+table.res table.cumPer td {
+	padding: 0;
+	line-height: 1.2em;
+}
+
+/* ステータス */
+table.resSrc {
+	line-height: 1.0em;
+	font-size: 0.8em;
+	background-color: white;
+	border: 1px solid gray;
+	margin-top: 1em;
+	width: 260px;
+}
+
+td.hereUrl {
+	border-top: 3px double #a0a0a0;
+	background-color: #f0f0f0;
+}
+td.hereUrl textarea {
+	background-color: #f0f0f0;
+	font-size: 9pt;
+	width: 255px;
+}
+
+/* 結果見出し列 */
+td.item3 {
+	padding-left: 1ex;
+	padding-right: 0.5ex;
+	text-align: right;
+	/*width: 40%;*/
+	/*white-space: nowrap;*/
+}
+/* グラフ用 */
+table.perList {
+	background-color: gray;
+	margin-top: 1em;
+	width: 100%;
+	font-size: 0.75em;
+	font-family: Helvetica, Arial;
+}
+table.perList th {
+	background-color: #ccc;
+}
+table.perList td {
+	background-color: white;
+	text-align: center;
+}
+table.perList td.per {
+	background-color: #bbf;
+}
+img.graph {
+	border: 1px solid #ddd;
+}
+
+/* */
+.right {
+	margin-top: 1em;
+	margin-right: 50px;
+	padding: 5px;
+	font-size: 0.9em;
+	color: #606060;
+}
+.right a { color: #6060ff; }
+.right#res {
+	font-size: 0.66em;
+}
+
+/* inputHelper */
+input#typInput {
+	width: 110px;
+}
+.cand {
+	display: none;
+	position: absolute;
+	overflow: hidden;
+	background-color: #ffc;
+	width: 105px;
+	padding: 3px;
+	border: 1px solid #dda;
+	line-height: 1em;
+	opacity: 1;
+	z-index: 1;
+}
+.cand ol {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.cand li {
+	font-size: 0.8em;
+	padding: 3px 2px;
+	margin: 0;
+	cursor: pointer;
+	white-space: nowrap;
+}
+.cand li span.pno {
+	font-family: Helvetica, Arial;
+}
+.cand li.sel {
+	border: 1px solid #aac;
+	background-color: #eef;
+	padding: 2px 1px;
+}
+.cand .note {
+	font-size: 0.6em;
+	font-family: sans-serif;
+}
+.cand .sep {
+	border-top: 1px solid #dda;
+	margin-top: 3px;
+}
+.candShade {
+	position: absolute;
+	z-index: 0;
+	width: 105px;
+	background-color: #330;
+	padding: 4px;
+	margin: 3px;
+}
